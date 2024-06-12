@@ -1,0 +1,8 @@
+.form {
+  display: grid;
+  gap: 0.5rem;
+
+  @media (min-width: 440px) {
+    grid-template-columns: 1fr max-content;
+  }
+}

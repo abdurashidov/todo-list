@@ -1,0 +1,23 @@
+<h1 class="main__title">
+  Today
+  @if (todos.length) {
+    <span class="main__count">
+      {{ todos.length }}
+    </span>
+  }
+</h1>
+<app-todo-form (addTaskEvent)="addTask($event)"></app-todo-form>
+@if (todos.length) {
+  <ul class="main__list list">
+    @for (todo of todos; track todo.id) {
+      <li class="list__item">
+        <app-todo [todo]="todo"
+                  (removeTaskEvent)="removeTask($event)"
+                  (toggleTaskEvent)="toggleTask($event)">
+        </app-todo>
+      </li>
+    }
+  </ul>
+} @else {
+  <p class="empty">You don't have any to-do list today.</p>
+}
