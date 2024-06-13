@@ -1,9 +1,0 @@
-.container {
-  padding-inline: 20px;
-
-  @media (min-width: 760px) {
-    padding-inline: calc(
-      (100% - 720px) / 2
-    );
-  }
-}
